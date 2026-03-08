@@ -13,7 +13,7 @@ const Footer = () => (
             Independent product testing for your home. We buy, test, and review household products so you don't have to guess.
           </p>
           <p className="mt-4 text-xs text-muted-foreground">
-            As an Amazon Associate, we earn from qualifying purchases. This doesn't affect our editorial independence.
+            As an Amazon.de affiliate, we earn from qualifying purchases. This doesn't affect our editorial independence.
           </p>
         </div>
         <div>
