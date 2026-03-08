@@ -33,10 +33,10 @@ const Footer = () => (
         <div>
           <h4 className="font-display font-semibold text-sm mb-3">About</h4>
           <nav className="flex flex-col gap-2">
-            <span className="text-sm text-muted-foreground">How We Test</span>
-            <span className="text-sm text-muted-foreground">Editorial Policy</span>
-            <span className="text-sm text-muted-foreground">Contact Us</span>
-            <span className="text-sm text-muted-foreground">Privacy Policy</span>
+            <Link to="/how-we-test" className="text-sm text-muted-foreground hover:text-foreground transition-colors">How We Test</Link>
+            <Link to="/editorial-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Editorial Policy</Link>
+            <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact Us</Link>
+            <Link to="/privacy-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link>
           </nav>
         </div>
       </div>

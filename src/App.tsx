@@ -7,6 +7,10 @@ import Index from "./pages/Index";
 import CategoryPage from "./pages/CategoryPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import ComparisonPage from "./pages/ComparisonPage";
+import HowWeTestPage from "./pages/HowWeTestPage";
+import EditorialPolicyPage from "./pages/EditorialPolicyPage";
+import ContactPage from "./pages/ContactPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +26,10 @@ const App = () => (
           <Route path="/categories" element={<CategoriesPage />} />
           <Route path="/category/:slug" element={<CategoryPage />} />
           <Route path="/test/:slug" element={<ComparisonPage />} />
+          <Route path="/how-we-test" element={<HowWeTestPage />} />
+          <Route path="/editorial-policy" element={<EditorialPolicyPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

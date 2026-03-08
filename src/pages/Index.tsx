@@ -14,19 +14,19 @@ const Index = () => {
       <section className="border-b bg-card">
         <div className="container py-16 md:py-24">
           <div className="max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-4">Independent Product Testing</p>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-4">Independent Product Testing for German Households</p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
               We test household products so you don't have to.
             </h1>
             <p className="mt-5 text-lg text-muted-foreground max-w-lg">
-              {allTests.length} hands-on comparison tests across {categories.length} categories. Real testing, honest verdicts, no sponsored picks.
+              {allTests.length} hands-on comparison tests across {categories.length} categories — from kitchen essentials to air quality. Real testing, honest verdicts, zero sponsored picks. All products available on Amazon.de.
             </p>
             <div className="flex gap-3 mt-8">
               <Button asChild size="lg">
                 <Link to="/categories">Browse All Tests</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to={`/test/${allTests[0].slug}`}>See a Test →</Link>
+                <Link to="/how-we-test">How We Test →</Link>
               </Button>
             </div>
           </div>
