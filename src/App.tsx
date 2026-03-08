@@ -7,6 +7,10 @@ import Index from "./pages/Index";
 import CategoryPage from "./pages/CategoryPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import ComparisonPage from "./pages/ComparisonPage";
+import HowWeTestPage from "./pages/HowWeTestPage";
+import EditorialPolicyPage from "./pages/EditorialPolicyPage";
+import ContactPage from "./pages/ContactPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
