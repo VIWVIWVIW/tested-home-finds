@@ -26,6 +26,10 @@ const App = () => (
           <Route path="/categories" element={<CategoriesPage />} />
           <Route path="/category/:slug" element={<CategoryPage />} />
           <Route path="/test/:slug" element={<ComparisonPage />} />
+          <Route path="/how-we-test" element={<HowWeTestPage />} />
+          <Route path="/editorial-policy" element={<EditorialPolicyPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
