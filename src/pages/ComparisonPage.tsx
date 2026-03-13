@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { getAmazonImageUrl } from "@/lib/amazon";
 
 const ComparisonPage = () => {
   const { slug } = useParams<{ slug: string }>();
