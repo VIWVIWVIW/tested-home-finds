@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ComparisonTest } from "@/data/types";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
+import { getAmazonImageUrl } from "@/lib/amazon";
 
 interface TestCardProps {
   test: ComparisonTest;
