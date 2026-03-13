@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Product } from "@/data/types";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, ThumbsUp, ThumbsDown } from "lucide-react";
+import { getAmazonImageUrl } from "@/lib/amazon";
 
 const badgeConfig = {
   "best-pick": { label: "Best Pick", className: "bg-accent text-accent-foreground" },
