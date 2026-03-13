@@ -12,12 +12,24 @@ interface TestCardProps {
 
 const TestCard = ({ test }: TestCardProps) => {
   const bestPick = test.products.find((p) => p.badge === "best-pick");
+  const imageUrl = bestPick ? getAmazonImageUrl(bestPick.amazonUrl, 200) : "";
+  const [imgError, setImgError] = useState(false);
 
   return (
     <Link to={`/test/${test.slug}`}>
       <Card className="group h-full overflow-hidden transition-all hover:shadow-md hover:-translate-y-0.5">
         <div className="bg-secondary/50 p-6 flex items-center justify-center h-32">
-          <span className="text-4xl opacity-50">🔬</span>
+          {imageUrl && !imgError ? (
+            <img
+              src={imageUrl}
+              alt={test.title}
+              className="max-h-24 max-w-[120px] object-contain"
+              loading="lazy"
+              onError={() => setImgError(true)}
+            />
+          ) : (
+            <span className="text-4xl opacity-50">🔬</span>
+          )}
         </div>
         <CardContent className="p-4">
           <Badge variant="secondary" className="text-[10px] uppercase tracking-wider mb-2">
