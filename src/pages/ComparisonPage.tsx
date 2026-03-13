@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { getAmazonImageUrl } from "@/lib/amazon";
 
 const ComparisonPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -59,6 +60,15 @@ const ComparisonPage = () => {
                 const badge = p.badge === "best-pick" ? "🏆 Best Pick" : p.badge === "runner-up" ? "🥈 Runner-Up" : "💰 Budget Pick";
                 return (
                   <div key={p.id} className="border rounded-lg p-4 bg-card text-center">
+                    <div className="flex justify-center mb-2">
+                      <img
+                        src={getAmazonImageUrl(p.amazonUrl, 150)}
+                        alt={p.name}
+                        className="h-20 object-contain"
+                        loading="lazy"
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                      />
+                    </div>
                     <p className="text-sm font-bold mb-1">{badge}</p>
                     <p className="font-display font-semibold text-sm">{p.name}</p>
                     <div className="inline-flex items-center gap-1 bg-foreground text-background px-2 py-0.5 rounded mt-2 text-xs font-bold">

@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Product } from "@/data/types";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, ThumbsUp, ThumbsDown } from "lucide-react";
+import { getAmazonImageUrl } from "@/lib/amazon";
 
 const badgeConfig = {
   "best-pick": { label: "Best Pick", className: "bg-accent text-accent-foreground" },
@@ -17,6 +19,8 @@ interface ProductCardProps {
 
 const ProductCard = ({ product, rank }: ProductCardProps) => {
   const badge = product.badge ? badgeConfig[product.badge] : null;
+  const imageUrl = getAmazonImageUrl(product.amazonUrl, 300);
+  const [imgError, setImgError] = useState(false);
 
   return (
     <Card className="group overflow-hidden transition-shadow hover:shadow-md" id={product.id}>
@@ -27,7 +31,17 @@ const ProductCard = ({ product, rank }: ProductCardProps) => {
             <span className="absolute top-3 left-3 font-display text-3xl font-bold text-muted-foreground/30">
               #{rank}
             </span>
-            <div className="text-4xl opacity-60">📦</div>
+            {imageUrl && !imgError ? (
+              <img
+                src={imageUrl}
+                alt={product.name}
+                className="max-h-28 max-w-[140px] object-contain"
+                loading="lazy"
+                onError={() => setImgError(true)}
+              />
+            ) : (
+              <div className="text-4xl opacity-60">📦</div>
+            )}
             {badge && (
               <Badge className={`absolute top-3 right-3 ${badge.className} text-[10px] uppercase tracking-wider font-bold`}>
                 {badge.label}
